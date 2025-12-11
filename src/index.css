@@ -1,65 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  font-family: "Space Grotesk", "Manrope", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #e9eef7;
+  background-color: #05090f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: none;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
+  background: radial-gradient(120% 120% at 10% 10%, rgba(60, 112, 171, 0.15), transparent 45%), #05090f;
+  color: #e9eef7;
+}
+
+a {
+  font-weight: 600;
+  color: #4cd6b4;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7af0d4;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3rem;
   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 12px;
+  border: 1px solid rgba(142, 242, 217, 0.5);
+  padding: 0.75em 1.3em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 700;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #2de4c6 0%, #36bdf2 100%);
+  color: #04101d;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(45, 228, 198, 0.2);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid rgba(142, 242, 217, 0.7);
+  outline-offset: 2px;
 }

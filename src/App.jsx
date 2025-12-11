@@ -4,13 +4,9 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import SignOut from './pages/SignOut.jsx'
-import Cats from './pages/Cats'
-import CatDetail from './pages/CatDetail'
-import CreateCat from './pages/CreateCat'
-import EditCat from './pages/EditCat'
-import Toys from './pages/Toys'
-import ToyDetail from './pages/ToyDetail'
-import CreateToy from './pages/CreateToy'
+import Techniques from './pages/Techniques'
+import TechniqueDetail from './pages/TechniqueDetail'
+import CreateTechnique from './pages/CreateTechnique'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -33,13 +29,9 @@ function App() {
         <Route path="/" element={<Home setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
-        <Route path="/cats" element={<Cats />} />
-        <Route path="/cats/add" element={<CreateCat />} />
-        <Route path="/cats/:catId/edit" element={<EditCat />} />
-        <Route path="/cats/:catId" element={<CatDetail />} />
-        <Route path="/toys" element={<Toys />} />
-        <Route path="/toys/add" element={<CreateToy />} />
-        <Route path="/toys/:toyId" element={<ToyDetail />} />
+        <Route path="/techniques" element={<Techniques />} />
+        <Route path="/techniques/add" element={<CreateTechnique />} />
+        <Route path="/techniques/:techniqueId" element={<TechniqueDetail />} />
       </Routes>
     </>
   )

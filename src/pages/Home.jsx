@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../services/users.js";
-import splash from "../assets/splash.svg";
 
 function Home({ setUser }) {
   const navigate = useNavigate();
@@ -41,53 +40,54 @@ function Home({ setUser }) {
     }
   };
 
-  const renderError = () => {
-    const toggleForm = form.isError ? "danger" : "";
-
-    if (form.isError) {
-      return (
-        <button type="submit" className={toggleForm}>
-          {form.errorMsg}
-        </button>
-      );
-    } else {
-      return <button type="submit">Log In</button>;
-    }
-  };
+  const renderError = () => (
+    <>
+      <button type="submit" className={form.isError ? "danger" : ""}>
+        Log In
+      </button>
+      {form.isError && <p className="form-error">{form.errorMsg}</p>}
+    </>
+  );
 
   return (
-    <div className="home-container">
-      <div>
-        <img src={splash} alt="splash" />
-      </div>
-      <div>
+    <div className="home-shell">
+      <div className="home-card">
+        <div className="brand-chip">OSS BOSS</div>
+        <h1>Sign in</h1>
+        <p className="home-subcopy">Access your OSS playbooks, handoffs, and rituals.</p>
+
         <form className="home-form" onSubmit={handleSubmit}>
-          <h1>Login</h1>
+          <label className="input-label" htmlFor="username">Username</label>
           <input
-            type='text'
-            name='username'
+            id="username"
+            type="text"
+            name="username"
             value={form.username}
-            placeholder='Enter Username'
+            placeholder="e.g. tc.operator"
             onChange={handleChange}
             required
             autoComplete="off"
           />
+
+          <label className="input-label" htmlFor="password">Password</label>
           <input
-            type='password'
-            name='password'
+            id="password"
+            type="password"
+            name="password"
             value={form.password}
-            placeholder='Enter Password'
+            placeholder="Enter your password"
             onChange={handleChange}
             required
             autoComplete="off"
           />
 
           {renderError()}
-
-          <Link to="/register">
-            <p>No account? Sign up here!</p>
-          </Link>
         </form>
+
+        <div className="home-footnote">
+          <span>Need an account?</span>
+          <Link to="/register">Register</Link>
+        </div>
       </div>
     </div>
   );
